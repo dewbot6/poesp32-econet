@@ -3,8 +3,7 @@ These are the instructions to use an M5Stack poesp32 running on ESPHOME with the
 Device: <https://shop.m5stack.com/products/esp32-ethernet-unit-with-poe>
 EcoNet: <https://github.com/esphome-econet/esphome-econet>
 
-Edit the `M5Stack_poesp32.yaml` file and rename the switches to whatever you want to call them.
-Change the API to one that you generate (you can use <https://generate.plus/en/base64> and set the length to 32).
+I have edited `econet-hpwh-esp32.yaml` file to include the ethernet config.
 
 Ensure that we have the latest version of ESPHome, Python, and other packages[^1]:
 
@@ -25,11 +24,8 @@ Update ESPHome:
 pip3 install -U esphome
 ```
 
-Disassemble the POESP32 and connect the pins on the board to the USB serial adaptor (with the USB disconnected).
-
-Ensure that RX -> TX and TX - RX.
-
-Plug in the USB while holding/strapping the G0 pin to the top of the ESP32 chip. This will put it into bootloader mode.
+Remove the hex bolt and clamshell to access the programming header.
+Connect a USB ESP32 programmer (I used a cheap one off Amazon: <https://www.amazon.com/gp/product/B0DKXW5WLT/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1>)
 
 Note the usb device that the M5Stack POESP32 is plugged into. If you see more than one device, unplug and re-run the command to see what the new device name is.
 
