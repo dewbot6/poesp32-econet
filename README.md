@@ -26,7 +26,7 @@ pip3 install -U esphome
 ```
 
 Remove the hex bolt and clamshell to access the programming header:
-
+![Image](https://github.com/user-attachments/assets/a66f53d7-eb5f-42a7-a4cd-45d1f95bd624)
 Connect a USB ESP32 programmer
 (I used a cheap one off Amazon: <https://www.amazon.com/gp/product/B0DKXW5WLT/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1>)
 
