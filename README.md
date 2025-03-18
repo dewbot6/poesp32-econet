@@ -2,6 +2,7 @@ These are the instructions to use an M5Stack poesp32 running on ESPHOME with the
 This was created with info from John Maton's repo: https://github.com/DrJohnM61/poesp32-esphome
 
 Device: <https://shop.m5stack.com/products/esp32-ethernet-unit-with-poe>
+
 EcoNet: <https://github.com/esphome-econet/esphome-econet>
 
 I have edited `econet-hpwh-esp32.yaml` file to include the ethernet config.
@@ -26,7 +27,7 @@ pip3 install -U esphome
 ```
 
 Remove the hex bolt and clamshell to access the programming header:
-
+![Image](https://github.com/user-attachments/assets/a66f53d7-eb5f-42a7-a4cd-45d1f95bd624)
 Connect a USB ESP32 programmer
 (I used a cheap one off Amazon: <https://www.amazon.com/gp/product/B0DKXW5WLT/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1>)
 
