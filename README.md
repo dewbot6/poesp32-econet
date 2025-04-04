@@ -89,6 +89,8 @@ docker run --rm -v "${PWD}":/config --device=/dev/ttyUSB1 -it esphome/esphome ru
 ## Adding to Home Assistant
 Open Home Assistant and add a new ESPHome Integration, inputting the hostname of your device (e.g. "econet-hpwh.local" by default for Heat Pump Water Heaters). The device may be discovered automatically, in which case just accept the new device and wait a few moments. Once added, you can visit the device's details page (via Settings -> Devices & Services) to see all of the provided sensors are working.
 
+## Wiring
+![Image](https://github.com/dewbot6/poesp32-econet/blob/main/Completed%20Unit.png)
 
 ## OTA
 Run the esphome run command without USB and withe device powered on over POE
