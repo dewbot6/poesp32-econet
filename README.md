@@ -1,7 +1,7 @@
 # ESPHome-EcoNet-PoE
 
 These are the instructions to use an M5Stack poesp32 running on ESPHome with the econet package.
-This was created with info from John Maton's [repo] (https://github.com/DrJohnM61/poesp32-esphome). I have edited `econet-hpwh-esp32.yaml` file to include the ethernet config. The included yaml file will work with heat pump water heaters, but the same modifications can used for other econet products.
+This was created with info from John Maton's [repo](https://github.com/DrJohnM61/poesp32-esphome). I have edited `econet-hpwh-esp32.yaml` file to include the ethernet config. The included yaml file will work with heat pump water heaters, but the same modifications can used for other econet products.
 
 ### Hareware
 [POE ESP32](https://shop.m5stack.com/products/esp32-ethernet-unit-with-poe)
@@ -36,7 +36,7 @@ Remove the hex bolt and clamshell on the PoESP32 to access the programming heade
 ![Image](https://github.com/dewbot6/poesp32-econet/blob/main/ESP32%20POE%20Screw.png)
 Connect a USB ESP32 programmer
 ![Image](https://github.com/dewbot6/poesp32-econet/blob/main/ESP32%20Programmer.png)
-(I used a cheap one off [Amazon](https://www.amazon.com/gp/product/B0DKXW5WLT/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1)
+(I used a cheap one off [Amazon](https://www.amazon.com/gp/product/B0DKXW5WLT/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1))
 
 ## Software Installation
 Note the usb device that the M5Stack POESP32 is plugged into. If you see more than one device, unplug and re-run the command to see what the new device name is.
