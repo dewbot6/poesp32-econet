@@ -1,0 +1,39 @@
+---
+substitutions:
+  tx_pin: GPIO16
+  rx_pin: GPIO17
+  platform: esp32
+  board: m5stack-core-esp32
+
+packages:
+  econet:
+    url: https://github.com/esphome-econet/esphome-econet
+    ref: main
+    file: econet_heatpump_water_heater.yaml
+
+dashboard_import:
+  package_import_url: github://esphome-econet/esphome-econet/build-yaml/${name}-${platform}.yaml@${github_ref}
+  import_full_config: false
+
+ethernet:
+  type: IP101
+  mdc_pin: GPIO23
+  mdio_pin: GPIO18
+  clk_mode: GPIO0_IN
+  phy_addr: 1
+  power_pin: GPIO5
+
+# Remove all things related to Wifi as the PoESP32 series does not support it
+wifi: !remove
+captive_portal: !remove
+sensor:
+  - id: !remove wifi_signal_sensor
+
+text_sensor:
+  - platform: ethernet_info
+    ip_address:
+      name: ESP IP Address
+      address_0:
+        name: ESP IP Address 0
+    mac_address:
+      name: ESP MAC Address
