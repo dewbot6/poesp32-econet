@@ -1,9 +1,18 @@
----
 substitutions:
   tx_pin: GPIO16
   rx_pin: GPIO17
-  platform: esp32
-  board: m5stack-core-esp32
+
+esphome:
+  name: econet-hpwh
+  friendly_name: Water Heater
+  comment: Rheem Heat Pump Water Heater
+  min_version: 2025.5.0
+  project:
+    name: esphome-econet.esphome-econet
+    version: v3.0.2
+
+esp32:
+  board: esp32dev
 
 packages:
   econet:
@@ -23,8 +32,12 @@ ethernet:
   phy_addr: 1
   power_pin: GPIO5
 
-# Remove all things related to Wifi as the PoESP32 series does not support it
 wifi: !remove
 captive_portal: !remove
+
+web_server:
+  port: 80
+  local: true
+
 sensor:
   - id: !remove wifi_signal_sensor

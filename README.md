@@ -123,8 +123,8 @@ INFO Upload took 5.06 seconds, waiting for result...
 INFO OTA successful
 INFO Successfully uploaded program.
 INFO Starting log output from econet-hpwh.local using esphome API
-INFO Successfully connected to econet-hpwh @ 192.168.1.233 in 2.139s
-INFO Successful handshake with econet-hpwh @ 192.168.1.233 in 0.016s
+INFO Successfully connected to econet-hpwh @ 192.168.1.XXX in 2.139s
+INFO Successful handshake with econet-hpwh @ 192.168.1.XXX in 0.016s
 
 ```
 
