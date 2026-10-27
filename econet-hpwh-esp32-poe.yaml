@@ -6,38 +6,74 @@ esphome:
   name: econet-hpwh
   friendly_name: Water Heater
   comment: Rheem Heat Pump Water Heater
-  min_version: 2025.5.0
+  min_version: 2026.4.0
   project:
     name: esphome-econet.esphome-econet
-    version: v3.0.2
+    version: v3.8.2
 
 esp32:
   board: esp32dev
+  framework:
+    type: esp-idf
+  
+ota:
+  - platform: esphome
+  
+api:
+  encryption:
+    key: !secret ha_api_key
 
 packages:
   econet:
     url: https://github.com/esphome-econet/esphome-econet
-    ref: main
+    ref: v3.8.2
     file: econet_heatpump_water_heater.yaml
-
-dashboard_import:
-  package_import_url: github://esphome-econet/esphome-econet/build-yaml/${name}-${platform}.yaml@${github_ref}
-  import_full_config: false
 
 ethernet:
   type: IP101
   mdc_pin: GPIO23
   mdio_pin: GPIO18
-  clk_mode: GPIO0_IN
+  # GPIO0/GPIO5 are strapping pins but hardwired to the PHY on the ESP32-POE board
+  clk:
+    mode: CLK_EXT_IN
+    pin:
+      number: 0
+      ignore_strapping_warning: true
   phy_addr: 1
-  power_pin: GPIO5
+  power_pin:
+    number: GPIO5
+    ignore_strapping_warning: true
 
 wifi: !remove
 captive_portal: !remove
 
 web_server:
-  port: 80
   local: true
 
 sensor:
   - id: !remove wifi_signal_sensor
+  
+water_heater:
+  - id: !extend econet_water_heater
+    supported_modes:
+      - "OFF"
+      - ECO
+      - HEAT_PUMP
+      - ELECTRIC
+      - HIGH_DEMAND
+
+text_sensor:
+  - platform: ethernet_info
+    ip_address:
+      name: "Water Heater IP Address"
+      
+logger:
+  level: DEBUG
+
+esp32_ble:
+  max_connections: 4
+
+esp32_ble_tracker:
+
+bluetooth_proxy:
+  connection_slots: 4
