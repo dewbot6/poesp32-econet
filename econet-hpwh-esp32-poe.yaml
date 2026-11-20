@@ -9,7 +9,7 @@ esphome:
   min_version: 2026.4.0
   project:
     name: esphome-econet.esphome-econet
-    version: v3.8.2
+    version: v3.8.4
 
 esp32:
   board: esp32dev
@@ -18,15 +18,16 @@ esp32:
   
 ota:
   - platform: esphome
+    encryption:
   
 api:
   encryption:
-    key: !secret ha_api_key
+    key: !secret econet_hpwh__econet_encryption_key
 
 packages:
   econet:
     url: https://github.com/esphome-econet/esphome-econet
-    ref: v3.8.2
+    ref: v3.8.4
     file: econet_heatpump_water_heater.yaml
 
 ethernet:
